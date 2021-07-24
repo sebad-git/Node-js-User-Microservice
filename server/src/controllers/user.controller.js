@@ -9,6 +9,7 @@ userService.login = (req,res) => {
         const userName = req.body.user;
         const password = req.body.password;
         const user = new User(userName,password,"User Logged","Lastname");
+        console.log("login called.");
         res.json(user);
     }catch (err) { res.json( { "status": err } ); console.error(err); }
 }

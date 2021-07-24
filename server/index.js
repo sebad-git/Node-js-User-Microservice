@@ -1,12 +1,12 @@
 const express = require('express');
-//const morgan = require('morgan');
+const cors = require('cors');
 const http = require('http');
 const app = express();
 const server = http.createServer(app);
 
 //Config
 app.set('port', process.env.PORT || 3000);
-//app.use(morgan("dev"));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

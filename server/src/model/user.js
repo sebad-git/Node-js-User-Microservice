@@ -1,7 +1,7 @@
 
-function User(user,password,name,lastname) {
-    this.user = user; this.password = password;
-    this.name=name; this.lastname=lastname;
+function User(userName,password,names,lastnames) {
+    this.userName = userName; this.password = password;
+    this.names=names; this.lastnames=lastnames;
   }
   
   User.prototype.setPassword = function(password) {
