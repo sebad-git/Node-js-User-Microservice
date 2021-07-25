@@ -6,8 +6,6 @@ module.exports = router;
 const userService = require('../controllers/user.controller');
 
 router.post('/login', userService.login);
-
-//router.post('/', menuService.saveItem);
-//router.get('/:id', menuService.saveItem);
-//router.put('/:id', menuService.saveItem);
-//router.delete('/:id', menuService.saveItem);
+router.post('/new-user', userService.register);
+router.post('/get-email', userService.validateMail);
+router.post('/forgot-password', userService.forgotPassword);
