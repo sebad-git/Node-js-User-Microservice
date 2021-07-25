@@ -1,2 +1,2 @@
-# Mi-Restaurant-User-Backend
-User Backend for Mi Restaurant
+# Node js User-Backend
+User backend microservice.
