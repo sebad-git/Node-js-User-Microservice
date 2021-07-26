@@ -3,6 +3,10 @@ const cors = require('cors');
 const http = require('http');
 const app = express();
 const server = http.createServer(app);
+const connection = require('./mongodb.connection');
+
+//Database
+connection.connect();
 
 //Config
 app.set('port', process.env.PORT || 3000);
@@ -17,4 +21,6 @@ app.use('/',require('./src/routes/user.routes'));
 //Server Status
 server.on('error',(err) =>{ console.error("Server error: "+err); });
 
-server.listen(app.get("port"),() =>{ console.log("Server started on port: "+app.get("port")); });
+server.listen(app.get("port"),() =>{ 
+    console.log("Server started on port: "+app.get("port"));
+});
