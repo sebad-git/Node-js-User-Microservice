@@ -46,7 +46,8 @@ const User = mongoose.model('USER', userSchema);
 
 userService.login = async (request,response) => {
     try {
-        const loginQuery = User.findOne( { userName: request.body.userName, password: request.body.password } );
+        const _username = request.body.userName, _password = request.body.password;
+        const loginQuery = User.findOne( { userName: _username, password: _password } );
         loginQuery.exec( (err, user) => {
             if (err) { console.error(err); throw err; } 
             response.json(user)});
